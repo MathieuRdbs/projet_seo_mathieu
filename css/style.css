@@ -9,3 +9,25 @@ body {
     background-position: center;   
     background-repeat: no-repeat; 
   }
+
+/* section appropos */
+.glass-card {
+  background-color: rgba(0, 0, 0, 0.5);       /* fond noir translucide */
+  backdrop-filter: blur(8px);                  /* flou de fond */
+  -webkit-backdrop-filter: blur(8px);          /* support Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* bordure fine translucide */
+  border-radius: 1rem;                          /* coins arrondis */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* ombre légère */
+}
+
+.glass-navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* Safari */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  /* Optionnel : fixe la navbar en haut avec transparence */
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* plus haut que Bootstrap par défaut */
+}
