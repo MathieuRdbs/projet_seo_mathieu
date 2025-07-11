@@ -1,0 +1,11 @@
+/* Affiche le dropdown quand on survole le <li> */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+body {
+    background-image: url('../image/bg1.jpg');
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat; 
+  }
