@@ -4,30 +4,61 @@
 }
 
 body {
-    background-image: url('../image/bg1.jpg');
+    /* background-image: url('../image/bg1.jpg');
     background-size: cover;        
     background-position: center;   
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat; */
+    background-color: whitesmoke; 
   }
 
-/* section appropos */
-.glass-card {
-  background-color: rgba(0, 0, 0, 0.5);       /* fond noir translucide */
-  backdrop-filter: blur(8px);                  /* flou de fond */
-  -webkit-backdrop-filter: blur(8px);          /* support Safari */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* bordure fine translucide */
-  border-radius: 1rem;                          /* coins arrondis */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);  /* ombre légère */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem; /* grande taille et lisible */
+  animation: slideFadeIn 1s ease-out forwards;
+  opacity: 0;
 }
 
-.glass-navbar {
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); /* Safari */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-  /* Optionnel : fixe la navbar en haut avec transparence */
-  position: sticky;
-  top: 0;
-  z-index: 1030; /* plus haut que Bootstrap par défaut */
+.content p {
+  font-size: 1.1rem;
+  animation: slideFadeIn 1.5s ease-out forwards;
+  opacity: 0;
 }
+
+.content a {
+  animation: slideFadeIn 2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* style APROPOS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.extra-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  animation: slideFadeIn 2s ease-out forwards;
+  opacity: 0;
+  color: #000; /* texte en noir */
+}
+
+.sub-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  animation: slideFadeIn 2.5s ease-out forwards;
+  opacity: 0;
+  color: #000; /* texte en noir */
+}
+
