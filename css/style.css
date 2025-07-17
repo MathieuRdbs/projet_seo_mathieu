@@ -62,3 +62,105 @@ body {
   color: #000; /* texte en noir */
 }
 
+
+/* STYLE DE SERVICES */
+.service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      max-width: 500px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-duration: 1.2s;
+      animation-timing-function: ease-out;
+    }
+
+.service-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+    /* Animation pour slide-in depuis la gauche */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Animation pour slide-in depuis la droite */
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Classes à appliquer selon la position */
+    .slide-in-left {
+      animation-name: slideInLeft;
+    }
+    .slide-in-right {
+      animation-name: slideInRight;
+    }
+
+    /* Délais d'animation pour effet escalier */
+    .slide-in-left:nth-of-type(odd) {
+      animation-delay: 0.2s;
+    }
+    .slide-in-right:nth-of-type(even) {
+      animation-delay: 0.2s;
+    }
+
+    .service-header {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    .service-short {
+      color: #555;
+    }
+    .service-details {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+      line-height: 1.5;
+    }
+    .toggle-btn {
+      margin-top: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
+
+/* style du CONTACT */
+.contact-info .icon {
+  font-size: 1.8rem;
+}
+
+.contact-info h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.contact-info p {
+  margin: 0;
+  color: #444;
+}
