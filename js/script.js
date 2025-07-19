@@ -28,3 +28,29 @@ function toggleDetails(button) {
       button.textContent = "Voir plus";
     }
   }
+
+//fonction pour afficher une notification d'envoi de message de contact
+const form = document.getElementById('contactForm');
+const alertBox = document.getElementById('alertBox');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Empêche soumission par défaut
+
+      if (form.checkValidity()) {
+        // Si tous les champs sont valides
+        showNotif("Merci pour votre message. Notre équipe vous contactera dans les plus brefs délais !", "success");
+        form.reset(); // Réinitialise le formulaire
+      } else {
+        // Sinon, Bootstrap affiche automatiquement les erreurs
+        form.classList.add('was-validated');
+      }
+    });
+
+    function showNotif(message, type = "success") {
+      alertBox.innerHTML = `
+        <div class="alert alert-${type} alert-dismissible fade show alert-animated" role="alert">
+          ${message}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+        </div>
+      `;
+    }
