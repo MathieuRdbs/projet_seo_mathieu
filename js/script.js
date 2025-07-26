@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+// Redirection au clic sur le lien dropdown
+  var dropdownLink = document.getElementById('dropdown07');
+  if (dropdownLink) {
+    dropdownLink.addEventListener('click', function (e) {
+      // Aller directement sur la page services.html
+      window.location.href = this.href;
+    });
+  }
+
 //API pour les membres de l'equipe
   function getRandomRole(i) {
     const roles = [
@@ -86,14 +95,7 @@ fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
 
 });
 
-// Redirection au clic sur le lien dropdown
-  var dropdownLink = document.getElementById('dropdown07');
-  if (dropdownLink) {
-    dropdownLink.addEventListener('click', function (e) {
-      // Aller directement sur la page services.html
-      window.location.href = this.href;
-    });
-  }
+
 
 //fonction qui affiche les details des services
 function toggleDetails(button) {
