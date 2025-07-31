@@ -8,6 +8,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+// micro animation du bg
+ VANTA.NET({
+    el: document.body,
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0xff1b1b,
+    backgroundColor: 0x0,
+    points: 8.00,
+    spacing: 16.00
+  });
+
+//scrollReveal
+  ScrollReveal().reveal('.sr', {
+    origin: 'bottom',    // ou 'top', 'left', 'right'
+    distance: '40px',
+    duration: 1000,
+    delay: 100,
+    interval: 200,
+    easing: 'ease-out',
+    reset: false         // si tu veux que ça s'anime qu'une fois
+  });
+  ScrollReveal().reveal('.main_part2 > .sr', {
+    origin: 'bottom',
+    distance: '40px',
+    duration: 1000,
+    interval: 150,
+    easing: 'ease-out',
+    reset: false
+  });
+
 //API pour les membres de l'equipe
   function getRandomRole(i) {
     const roles = [
@@ -93,6 +128,8 @@ fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
           console.error("Erreur API :", err);
         });
 
+
+
 });
 
 
@@ -136,6 +173,10 @@ const alertBox = document.getElementById('alertBox');
     }
   
   
-
+ // Fonction d'interaction de la page d'accueil
+  function setActive(element) {
+    document.querySelectorAll('.step-box').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+  }
  
  

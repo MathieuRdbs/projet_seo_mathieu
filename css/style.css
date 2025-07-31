@@ -1,52 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent;
+  overflow-x: hidden;
+}
+
+/* STYLE NAVBAR */
+nav{
+  z-index: 2;
+}
+
 /* Affiche le dropdown quand on survole le <li> */
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-body {
-    /* background-image: url('../image/bg1.jpg');
-    background-size: cover;        
-    background-position: center;   
-    background-repeat: no-repeat; */
-    background-color: whitesmoke; 
-  }
 
-hr{
-  font-size: 4px;
-}
+
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-/* style ACCUEIL */
+/* STYLE ACCUEIL */
+
+
 .main-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem; /* grande taille et lisible */
-  animation: slideFadeIn 1s ease-out forwards;
-  opacity: 0;
+  font-size: 5rem; /* grande taille et lisible */
+  /* animation: slideFadeIn 1s ease-out forwards; */
+  opacity: 1;
+  color: #f0f0f0;
 }
 
 .content p {
-  font-size: 1.1rem;
-  animation: slideFadeIn 1.5s ease-out forwards;
-  opacity: 0;
+  font-size: 1.2rem;
+  /* animation: slideFadeIn 1.5s ease-out forwards; */
+  opacity: 1;
+  color: #f0f0f0;
 }
 
 .content a {
-  animation: slideFadeIn 2s ease-out forwards;
-  opacity: 0;
+  opacity: 1;
+  color: #f0f0f0;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  z-index: 2;
+  position: relative;
 }
 
-@keyframes slideFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.content a:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+/* ------------------------------------------------------------------------------ */
+    .main_part2{
+      counter-reset: step-counter;
+    }
+
+    .step-box {
+      background: #1e1e2f;
+      padding: 25px;
+      border-radius: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      padding-bottom: 40px;
+      opacity: 0.8;
+    }
+
+    .step-box:hover {
+      border-color: #f0f0f0;
+      transform: translateY(-6px);
+    }
+
+    .step-box::after {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: bold;
+      color: #f0f0f0;
+      background: #1e1e2f;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
 }
 
+    .step-box i {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #f0f0f0;
+    }
+
+    .step-box h5 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    
+    @media (max-width: 768px) {
+      .step-box::after {
+        display: none;
+      }
+
+      .step-box {
+        margin-bottom: 25px;
+      }
+    }
+
+
+/* -------------------------------------------------------------------------------- */
 .carousel-item {
   height: 500px; 
 }
@@ -80,6 +160,12 @@ hr{
   font-size: 1.2rem; 
 }
 
+.carousel{
+  width: 80%;
+  border: 2px solid #f0f0f0 ;
+  margin-left: 10%;
+}
+
 /* Style général du lien voir plus */
 .btn-link-animated {
   display: inline-block;
@@ -110,19 +196,73 @@ hr{
 
 .extra-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  animation: slideFadeIn 2s ease-out forwards;
-  opacity: 0;
-  color: #000; /* texte en noir */
+  font-size: 5rem; 
+  opacity: 1;
+  color: #f0f0f0;
 }
 
 .sub-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
-  animation: slideFadeIn 2.5s ease-out forwards;
-  opacity: 0;
-  color: #000; /* texte en noir */
+  opacity: 1;
+  color: #f0f0f0; /* texte en noir */
 }
+
+/* card a propos animé */
+.wrapper{
+    perspective: 3000px;
+}
+.about-card{
+    transform-style: preserve-3d;
+    transition: transform .8s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.about-card:hover{
+    transform: rotateY(180deg);
+}
+
+.front-page,.back-page{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front-page{
+    /* background-image: url(../image/history.jpg);
+    background-size: cover; */
+}
+
+.card-info{
+    position: absolute;
+    color: #f0f0f0;
+    padding-left: 20px; /* pour laisser de la place à la ligne */
+
+}
+.card-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px; /* épaisseur de la ligne */
+    height: 100%;
+    background-color: white; /* couleur de la ligne */
+    border-radius: 2px;
+}
+
+.back-page{
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-text{
+  font-size: 1.5rem;
+}
+
+
 
 
 /* style membre de l'equipe */
