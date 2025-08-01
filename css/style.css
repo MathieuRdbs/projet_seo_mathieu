@@ -3,7 +3,6 @@ body {
   padding: 0;
   height: 100%;
   background: transparent;
-  overflow-x: hidden;
 }
 
 /* STYLE NAVBAR */
@@ -203,21 +202,23 @@ nav{
 
 .sub-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   opacity: 1;
-  color: #f0f0f0; /* texte en noir */
+  color: #f0f0f0; 
 }
 
 /* card a propos animé */
 .wrapper{
     perspective: 3000px;
+    width: 100%;
 }
 .about-card{
-    transform-style: preserve-3d;
-    transition: transform .8s ease-in-out;
-    cursor: pointer;
     width: 100%;
-    height: 100%;
+    height: 300px; 
+    position: relative; 
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
 }
 
 .about-card:hover{
@@ -262,63 +263,72 @@ nav{
   font-size: 1.5rem;
 }
 
+.about-part2{
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8B0000, #000000);
 
+}
 
 
 /* style membre de l'equipe */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.card {
+.card-v2 {
   position: relative;
-  height: 300px;
+  height: 200px;
   border-radius: 12px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card::before {
+.card-v2::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.45);
+  inset: 0;
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter 0.4s ease;
   z-index: 1;
 }
 
-.card-content {
+.card-v2:hover::before {
+  backdrop-filter: blur(4px);
+}
+
+.card-v2 .card-content {
   position: absolute;
-  bottom: 0;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.card-content h3 {
-  font-size: 1.3rem;
-  margin: 0 0 0.3rem;
+.card-v2:hover .card-content {
+  opacity: 1;
 }
 
-.card-content p {
-  font-size: 1rem;
-  opacity: 0.85;
+.card-v2 .card-content h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card-v2 .card-content p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0 0;
 }
 
 

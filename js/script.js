@@ -8,21 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-// micro animation du bg
- VANTA.NET({
-    el: document.body,
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    color: 0xff1b1b,
-    backgroundColor: 0x0,
-    points: 8.00,
-    spacing: 16.00
-  });
 
 //scrollReveal
   ScrollReveal().reveal('.sr', {
@@ -43,22 +28,58 @@ document.addEventListener('DOMContentLoaded', function () {
     reset: false
   });
 
+//Compteur qui defile pour les chiffres 
+const counters = document.querySelectorAll('.counter');
+  const options = {
+    threshold: 0.6
+  };
+
+  const startCounter = (entry) => {
+    const counter = entry.target;
+    const target = +counter.getAttribute('data-target');
+    const isPercent = counter.textContent.includes('%');
+    let count = 0;
+    const duration = 4000; // en ms
+    const increment = target / (duration / 20); // 20 ms par incrément
+
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        counter.textContent = Math.floor(count) + (isPercent ? '%' : '');
+        setTimeout(updateCount, 20);
+      } else {
+        counter.textContent = target + (isPercent ? '%' : '');
+      }
+    };
+
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounter(entry);
+        obs.unobserve(entry.target); // Pour ne le faire qu'une seule fois
+      }
+    });
+  }, options);
+
+  counters.forEach(counter => observer.observe(counter));  
+
 //API pour les membres de l'equipe
   function getRandomRole(i) {
     const roles = [
       "CEO & Expert en SEO",
       "Responsable RH",
       "Responsable Marketing",
-      "Chef de Projet",
       "Developpeur SEO Senior",
-      "Analyste Données",
       "UX Designer",
       "Service Client"
     ];
     return roles[i];
   }
 
-  fetch("https://randomuser.me/api/?results=8&nat=fr")
+  fetch("https://randomuser.me/api/?results=6&nat=fr")
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("teamContainer");
@@ -69,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const image = user.picture.large;
 
       const card = document.createElement("div");
-      card.className = "card";
+      card.className = "card-v2";
       card.style.backgroundImage = `url('${image}')`;
       card.style.backgroundSize = "cover";
       card.style.backgroundPosition = "center";
 
       card.innerHTML = `
-        <div class="card-content">
+        <div class="card-content text-center">
           <h3>${fullName}</h3>
           <p>${role}</p>
         </div>
@@ -133,6 +154,38 @@ fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
 });
 
 
+//animation vanta pour le background
+let vantaEffect;
+
+  window.onload = () => {
+    vantaEffect = VANTA.NET({
+      el: document.body,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xff1b1b,
+      backgroundColor: 0x0,
+      points: 8.00,
+      spacing: 16.00
+    });
+
+    // Petit correctif de dimension si besoin
+    setTimeout(() => {
+      if (vantaEffect && vantaEffect.resize) {
+        vantaEffect.resize();
+      }
+    }, 100);
+  };
+
+  window.addEventListener('resize', () => {
+    if (vantaEffect && vantaEffect.resize) {
+      vantaEffect.resize();
+    }
+  });
 
 //fonction qui affiche les details des services
 function toggleDetails(button) {
