@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     delay: 100,
     interval: 200,
     easing: 'ease-out',
-    reset: false         // si tu veux que ça s'anime qu'une fois
+    reset: false         
   });
   ScrollReveal().reveal('.main_part2 > .sr', {
     origin: 'bottom',
@@ -173,7 +173,7 @@ let vantaEffect;
       spacing: 16.00
     });
 
-    // Petit correctif de dimension si besoin
+    // Correction erreur de dimension
     setTimeout(() => {
       if (vantaEffect && vantaEffect.resize) {
         vantaEffect.resize();
