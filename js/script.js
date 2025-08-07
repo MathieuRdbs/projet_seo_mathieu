@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //scrollReveal
-  ScrollReveal().reveal('.sr', {
+  ScrollReveal().reveal('.sr', { //scroll reveal from the bottom
     origin: 'bottom',    // ou 'top', 'left', 'right'
     distance: '40px',
     duration: 1000,
@@ -19,8 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
     easing: 'ease-out',
     reset: false         
   });
-  ScrollReveal().reveal('.main_part2 > .sr', {
+  ScrollReveal().reveal('.main_part2 > .sr', { //scroll reveal from the bottom
     origin: 'bottom',
+    distance: '40px',
+    duration: 1000,
+    interval: 150,
+    easing: 'ease-out',
+    reset: false
+  });
+  ScrollReveal().reveal('.sr2', { //scroll reveal from the left
+    origin: 'left',
+    distance: '40px',
+    duration: 1000,
+    interval: 150,
+    easing: 'ease-out',
+    reset: false
+  });
+  ScrollReveal().reveal('.sr3', { //scroll reveal from the right
+    origin: 'right',
     distance: '40px',
     duration: 1000,
     interval: 150,

@@ -17,6 +17,16 @@ nav{
   display: block;
 }
 
+a.hvr-underline-from-left {
+  border-bottom: none;
+  position: relative; /* nécessaire pour ::before */
+}
+
+a.hvr-underline-from-left::before {
+  background-color: #e74c3c !important; /* ta couleur désirée */
+}
+
+
 
 
 
@@ -229,10 +239,6 @@ nav{
     backface-visibility: hidden;
 }
 
-.front-page{
-    /* background-image: url(../image/history.jpg);
-    background-size: cover; */
-}
 
 .card-info{
     position: absolute;
@@ -388,56 +394,14 @@ nav{
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       max-width: 500px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      animation-fill-mode: forwards;
-      animation-duration: 1.2s;
-      animation-timing-function: ease-out;
+      opacity: 1;
+     
     }
 
 .service-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-    /* Animation pour slide-in depuis la gauche */
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Animation pour slide-in depuis la droite */
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Classes à appliquer selon la position */
-    .slide-in-left {
-      animation-name: slideInLeft;
-    }
-    .slide-in-right {
-      animation-name: slideInRight;
-    }
-
-    /* Délais d'animation pour effet escalier */
-    .slide-in-left:nth-of-type(odd) {
-      animation-delay: 0.2s;
-    }
-    .slide-in-right:nth-of-type(even) {
-      animation-delay: 0.2s;
-    }
 
     .service-header {
       font-size: 1.4rem;
@@ -456,17 +420,83 @@ nav{
     }
     .toggle-btn {
       margin-top: 12px;
-      background-color: #007bff;
+      background: #555;
+      border: 2px solid #fff;
       color: white;
       border: none;
       padding: 8px 16px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.6s ease;
     }
     .toggle-btn:hover {
-      background-color: #0056b3;
+      background-color: #f0f0f0;
+      color: #1e1e2f;
+      border: 2px solid #1e1e2f;
     }
+
+    /* 2ème partie */
+.container2 {
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* espace entre les deux lignes */
+    padding: 40px;
+  }
+
+  .section1, .section2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .section1,
+    .section2 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .section1 {
+    justify-content: flex-start; /* aligner à gauche */
+    
+  }
+  
+  .section2 {
+    justify-content: flex-end; /* aligner à droite */
+  }
+
+  h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem; 
+      opacity: 1;
+    }
+
+  .services_img {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  h1.hvr-underline-from-left {
+  border-bottom: none;
+  position: relative; /* nécessaire pour ::before */
+}
+
+h1.hvr-underline-from-left::before {
+  background-color: #1e1e2f !important; /* ta couleur désirée */
+}
+
+h1.hvr-underline-from-right {
+  border-bottom: none;
+  position: relative; /* nécessaire pour ::before */
+}
+
+h1.hvr-underline-from-right::before {
+  background-color: #1e1e2f !important; /* ta couleur désirée */
+}
 
 /* style du CONTACT */
 .contact-info .icon {
