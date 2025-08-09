@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: transparent;
+  background: black;
+  z-index: -4;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -19,16 +20,12 @@ nav{
 
 a.hvr-underline-from-left {
   border-bottom: none;
-  position: relative; /* nécessaire pour ::before */
+  position: relative; 
 }
 
 a.hvr-underline-from-left::before {
-  background-color: #e74c3c !important; /* ta couleur désirée */
+  background-color: #e74c3c !important; 
 }
-
-
-
-
 
 
 /* STYLE ACCUEIL */
@@ -482,20 +479,20 @@ a.hvr-underline-from-left::before {
 
   h1.hvr-underline-from-left {
   border-bottom: none;
-  position: relative; /* nécessaire pour ::before */
+  position: relative; 
 }
 
 h1.hvr-underline-from-left::before {
-  background-color: #1e1e2f !important; /* ta couleur désirée */
+  background-color: #1e1e2f !important; 
 }
 
 h1.hvr-underline-from-right {
   border-bottom: none;
-  position: relative; /* nécessaire pour ::before */
+  position: relative; 
 }
 
 h1.hvr-underline-from-right::before {
-  background-color: #1e1e2f !important; /* ta couleur désirée */
+  background-color: #1e1e2f !important; 
 }
 
 /* style du CONTACT */
@@ -528,3 +525,18 @@ h1.hvr-underline-from-right::before {
         transform: translateY(0);
       }
     }
+
+.form {
+  background-color: #f0f0f0;
+  position: relative;
+  padding: 5%;
+  border-radius: 15px;
+  color: #000;
+  opacity: 0.85; 
+}
+
+.hvr-sweep-to-right::before {
+  background: #e74c3c !important;
+   
+  
+}

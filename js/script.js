@@ -188,6 +188,7 @@ let vantaEffect;
       points: 8.00,
       spacing: 16.00
     });
+    
 
     // Correction erreur de dimension
     setTimeout(() => {
@@ -247,5 +248,4 @@ const alertBox = document.getElementById('alertBox');
     document.querySelectorAll('.step-box').forEach(el => el.classList.remove('active'));
     element.classList.add('active');
   }
- 
  

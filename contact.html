@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- hover css animation -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet"/>
-
 </head>
 <body>
     <!-- BARRE DE NAVIGATION -->
@@ -37,10 +36,10 @@
             <li class="nav-item dropdown ">
               <a class="nav-link dropdown-toggle hvr-underline-from-left" href="services.html" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="false">NOS SERVICES</a>
               <div class="dropdown-menu" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="services.html#card1">Audit SEO complet</a>
-                <a class="dropdown-item" href="services.html#card2">Rédaction de Contenu Optimisé</a>
-                <a class="dropdown-item" href="services.html#card3">Optimisation On-Page</a>
-                <a class="dropdown-item" href="services.html#card4">SEO Local</a>
+                <a class="dropdown-item hvr-underline-from-left" href="services.html#card1">Audit SEO complet</a>
+                <a class="dropdown-item hvr-underline-from-left" href="services.html#card2">Rédaction de Contenu Optimisé</a>
+                <a class="dropdown-item hvr-underline-from-left" href="services.html#card3">Optimisation On-Page</a>
+                <a class="dropdown-item hvr-underline-from-left" href="services.html#card4">SEO Local</a>
               </div>
             </li>
             <li class="nav-item active">
@@ -56,9 +55,12 @@
 
     <!-- main -->
 <div class="container"><br>
-  <h1 class="main-title mb-3 extra-title text-center " id="typed"></h1><br>
-  <br>
-    <form id="contactForm" style="width: 60%; margin-left: 20%;" novalidate>
+  
+    <h1 class="main-title mb-3 extra-title text-center sr">Voulez-vous COLLABORER ? Contactez-nous dès maintenant chez SEO AGENCY !</h1><br>
+
+    <div style=" padding: 5%; z-index: 2;" class="form sr2">
+      
+      <form id="contactForm" style="width: 60%; margin-left: 20%; opacity: 1;" novalidate>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="Nom">Nom</label>
@@ -84,36 +86,39 @@
             style="width: 100%; max-width: 500px; height: 200px;" placeholder="Écrivez ici..." required></textarea> 
       </div>
     </div>
-    <button type="submit" class="btn btn-secondary">Envoyer</button>
+    <button type="submit" class="btn  btn-dark hvr-sweep-to-right">Envoyer</button>
   </form>
+    </div>
+    
 
   <!-- Zone de notification -->
   <div id="alertBox" class="mt-4"></div>
   
   <br>
   <hr>
-  <div class="contact-info container my-5">
-    <h1 class="main-title mb-3 extra-title text-center">Nos coordonnées </h1><br>
-    <div class="row g-4">
+  <div class="contact-info container my-5 sr3 " >
+    
+    <h1 class="main-title mb-3 extra-title text-center">Nos coordonnées</h1>
+    <div class="row g-4" style="background: #f0f0f0; padding: 5%; border-radius: 15px; opacity: 0.85;">
 
-      <div class="col-12 col-md-4">
-        <div class="contact-card p-4 text-center shadow rounded">
+      <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <div class="contact-card p-4 text-center hvr-float-shadow">
           <i class="bi bi-telephone-fill icon mb-3 text-danger"></i>
           <h5>Téléphone</h5>
           <p>+212 7 77 91 26 36</p>
         </div>
       </div>
 
-      <div class="col-12 col-md-4">
-        <div class="contact-card p-4 text-center shadow rounded">
+      <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <div class="contact-card p-4 text-center hvr-float-shadow">
           <i class="bi bi-envelope-fill icon mb-3 text-danger"></i>
           <h5>Email</h5>
           <p>contact@seoagency.ma</p>
         </div>
       </div>
 
-      <div class="col-12 col-md-4">
-        <div class="contact-card p-4 text-center shadow rounded">
+      <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+        <div class="contact-card p-4 text-center hvr-float-shadow">
           <i class="bi bi-geo-alt-fill icon mb-3 text-danger" ></i>
           <h5>Adresse</h5>
           <p>123 Avenue Mohamed V, Casablanca</p>
@@ -122,8 +127,12 @@
 
     </div>
   </div>
-
+  <br><br>
+  <br><br><br>
+  <h3 class=" mb-3 text-light text-center" id="typed"></h3>
 </div>
+
+
 <br>
 
 
@@ -134,13 +143,20 @@
         <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="mx-2"><a class="text-body-secondary" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
-        <li class="mx-2"><a class="text-body-secondary" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
+        <li class="mx-2"><a class="text-danger" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+        <li class="mx-2"><a class="text-danger" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
     </ul>
     </footer>
 
     
 
+
+<!-- three.js & VANTA.NET-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+<!-- ScrollReveal.js -->
+<script src="https://unpkg.com/scrollreveal"></script>
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -158,14 +174,15 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   var typed = new Typed('#typed', {
-    strings: ["Voulez-vous COLLABORER ? Contactez-nous dès maintenant chez SEO AGENCY !"],
+    strings: ["On vous remercie pour votre visite ! A bientot !"],
     typeSpeed: 100,
-    backSpeed: 25,
+    backSpeed: 50,
     backDelay: 1500,
-    loop: false
+    loop: true
   });
 
 </script>
+
 
 </body>
 </html>
