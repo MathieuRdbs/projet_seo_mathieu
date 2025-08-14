@@ -10,12 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- hover css animation -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet"/>
-
+    <!--  AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 <body>
+
+    <!-- retour vers le haut -->
+    <button id="backToTop" title="Retour en haut">
+      <i class="fa-regular fa-circle-up"></i>
+    </button>
+
     <!-- BARRE DE NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-dark  " style="background-color: black;" >
-      <div class="container">
+      <div class="container" >
         <a class="navbar-brand" href="index.html"><img src="image/logo1.png" alt="Logo" style="height: 80px;"></a>
         <button class="navbar-toggler collapsed" type="button" 
             data-toggle="collapse" 
@@ -56,18 +63,18 @@
 
 <br><br><br>
 
-<section id="about" class="py-5">
-  <div class="container">
+<section id="about">
+  <div class="container" style="padding-top: 70px;">
 
     <div class="d-flex justify-content-center align-items-center text-center mb-5 text-light" style="height: 30vh;">
       <div class="content text-dark">
-        <h1 class="main-title mb-3 extra-title sr">Qui sommes-nous ? </h1>
+        <h1 class="main-title mb-3 extra-title " data-aos="fade-up">Qui sommes-nous ? </h1>
         <p class="lead sub-text" id="typed"></p>
       </div>
     </div>
     <br><br><br>
     <div class="row mb-5 g-6" style="margin: 50px 0;">
-        <div class="col-12 col-md-6 wrapper">
+        <div class="col-12 col-lg-6 wrapper">
             <div class="about-card ">
                 <div class="front-page">
                     <div class="card-info">
@@ -83,7 +90,7 @@
             </div>
         </div>  
 
-      <div class="col-12 col-md-6 wrapper">
+      <div class="col-12 col-lg-6 wrapper">
             <div class="about-card ">
                 <div class="front-page">
                     <div class="card-info">
@@ -107,7 +114,7 @@
     </div>
 <br><br>
     <div class="row mb-5 g-6" style="margin: 50px 0;">
-        <div class="col-12 col-md-6 wrapper">
+        <div class="col-12 col-lg-6 wrapper">
             <div class="about-card ">
                 <div class="front-page">
                     <div class="card-info">
@@ -128,9 +135,9 @@
                 </div>
             </div>
         </div>  
-
-      <div class="col-12 col-md-6 wrapper">
-            <div class="about-card ">
+<br><br><br>
+      <div class="col-12 col-lg-6 wrapper">
+            <div class="about-card">
                 <div class="front-page">
                     <div class="card-info">
                         <h2 class="h4 fw-semibold mb-3 extra-title">Pourquoi nous choisir ?</h2>
@@ -151,43 +158,45 @@
         </div>  
     </div>
 
+  </div>
   <br><br><br>
 
-  <div class="mb-5 text-center p-4 shadow rounded about-part2">
-      <h2 class="h4 fw-semibold mb-4 extra-title">Quelques chiffres</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <p class="display-2 fw-bold text-light sub-text counter" data-target="45" style="font-size: 1.8rem;">0%</p>
-          <i class="bi bi-bar-chart-fill fs-2 text-light" style="font-size: 1.8rem;"></i> 
-          <p class="sub-text mt-2">Croissance moyenne du trafic organique</p>
+  <div style="padding-top: 5%; padding-bottom: 10%;" >
+    <div class="mb-5 text-center" data-aos="fade-right">
+        <h2 class="h4 fw-semibold mb-4 extra-title" >Quelques chiffres</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <p class="display-2 fw-bold text-light sub-text counter" data-target="45" style="font-size: 1.8rem;">0%</p>
+            <i class="bi bi-bar-chart-fill fs-2 text-light" style="font-size: 1.8rem;"></i> 
+            <p class="sub-text mt-2">Croissance moyenne du trafic organique</p>
+          </div>
+          <div class="col-md-4">
+            <p class="display-2 fw-bold text-light sub-text counter" data-target="60" style="font-size: 1.8rem;">0</p>
+            <i class="bi bi-people-fill fs-2 text-light" style="font-size: 1.8rem;"></i> 
+            <p class="sub-text mt-2">Sites accompagnés depuis 2025</p>
+          </div>
+          <div class="col-md-4">
+            <p class="display-2 fw-bold text-light sub-text counter" data-target="95" style="font-size: 1.8rem;">0%</p>
+            <i class="bi bi-hand-thumbs-up-fill fs-2 text-light" style="font-size: 1.8rem;"></i> 
+            <p class="sub-text mt-2">Clients fidèles grâce à notre suivi régulier</p>
+          </div>
         </div>
-        <div class="col-md-4">
-          <p class="display-2 fw-bold text-light sub-text counter" data-target="60" style="font-size: 1.8rem;">0</p>
-          <i class="bi bi-people-fill fs-2 text-light" style="font-size: 1.8rem;"></i> 
-          <p class="sub-text mt-2">Sites accompagnés depuis 2025</p>
-        </div>
-        <div class="col-md-4">
-          <p class="display-2 fw-bold text-light sub-text counter" data-target="95" style="font-size: 1.8rem;">0%</p>
-          <i class="bi bi-hand-thumbs-up-fill fs-2 text-light" style="font-size: 1.8rem;"></i> 
-          <p class="sub-text mt-2">Clients fidèles grâce à notre suivi régulier</p>
-        </div>
-      </div>
-  </div>
+    </div>
+<br><br><br><br>
 
-
-    <div class="text-center p-4 shadow rounded text-light about-part2">
+    <div class="text-center text-light" data-aos="fade-left">
       <h2 class="h4 fw-semibold mb-3 extra-title">Envie d’en savoir plus ?</h2>
-      <p class="sub-text">Découvrez <a href="services.html" class="text-light fw-bold hvr-float"> <strong>NOS SERVICES</strong> </a> ou <a href="contact.html" class="text-light fw-bold hvr-float"><strong>CONTACTEZ-NOUS</strong> </a> pour obtenir un audit SEO gratuit.</p>
+      <p class="sub-text">Découvrez <a href="services.html" style="z-index: 9999;" class="text-light fw-bold hvr-float"> <strong>NOS SERVICES</strong> </a> ou <a href="contact.html" class="text-light fw-bold hvr-float" style="z-index: 9999;"><strong>CONTACTEZ-NOUS</strong> </a> pour obtenir un audit SEO gratuit.</p>
       
     </div>
-
+    <br><br><br><br>
   </div>
 
-  <hr>
-  <br><br><br><br>
-  <!-- Notre equipe -->
-    <h1 class="main-title mb-3 extra-title text-center sr">Notre équipe</h1>
-    <div class="team-grid sr" id="teamContainer">
+
+  <div style="background-color: #f0f0f0; padding-top: 5%; height: 100%;">
+    <!-- Notre equipe -->
+    <h1 class="main-title mb-3 extra-title text-center text-dark" data-aos="fade-left">Notre équipe</h1>
+    <div class="team-grid" id="teamContainer" data-aos="fade-right">
         <!-- Cards insérées depuis l'API -->
 
       </div>
@@ -195,21 +204,22 @@
   <br>
   <hr>
   <br>
-  <br><br>
+  
   <!-- AVIS -->
-  <h1 class="main-title mb-3 extra-title text-center">Quelques avis sur nous</h1>
-  <div class="container py-5">
-      <div class="row" id="avis-container">
+  <h1 class="main-title mb-3 extra-title text-center text-dark" data-aos="fade-right">Quelques avis sur nous</h1>
+  <div class="container " data-aos="fade-left">
+      <div class="row" id="avis-container" >
         <!-- Avis générés ici depuis l'API -->
       </div>
     </div>
+  </div>
 
 
 </section>
 
 
     <!-- FOOTER -->
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3  border-top text-light " style="background-color:black">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center  border-top text-light " style="background-color:black">
     <div class="col-md-4 d-flex align-items-center">
         <img src="image/logo1.png" alt="Logo" style="height: 50px;">
         <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
@@ -221,12 +231,17 @@
     </footer>
 
     
-<!-- three.js & VANTA.NET-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
-<!-- ScrollReveal.js -->
-<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- aos -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1500, 
+    easing: 'ease-out',
+    once: true,
+  });
+</script>
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -244,7 +259,7 @@
 <script>
   var typed = new Typed('#typed', {
     strings: ["Depuis 2025, nous aidons entreprises et e-commerçants à se démarquer grâce à des stratégies SEO sur mesure et performantes.!"],
-    typeSpeed: 50,
+    typeSpeed: 20,
     backSpeed: 25,
     backDelay: 1500,
     loop: false
