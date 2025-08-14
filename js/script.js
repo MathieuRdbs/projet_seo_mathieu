@@ -1,4 +1,7 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
+
 // Redirection au clic sur le lien dropdown
   var dropdownLink = document.getElementById('dropdown07');
   if (dropdownLink) {
@@ -9,40 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-//scrollReveal
-  ScrollReveal().reveal('.sr', { //scroll reveal from the bottom
-    origin: 'bottom',    // ou 'top', 'left', 'right'
-    distance: '40px',
-    duration: 1000,
-    delay: 100,
-    interval: 200,
-    easing: 'ease-out',
-    reset: false         
-  });
-  ScrollReveal().reveal('.main_part2 > .sr', { //scroll reveal from the bottom
-    origin: 'bottom',
-    distance: '40px',
-    duration: 1000,
-    interval: 150,
-    easing: 'ease-out',
-    reset: false
-  });
-  ScrollReveal().reveal('.sr2', { //scroll reveal from the left
-    origin: 'left',
-    distance: '40px',
-    duration: 1000,
-    interval: 150,
-    easing: 'ease-out',
-    reset: false
-  });
-  ScrollReveal().reveal('.sr3', { //scroll reveal from the right
-    origin: 'right',
-    distance: '40px',
-    duration: 1000,
-    interval: 150,
-    easing: 'ease-out',
-    reset: false
-  });
 
 //Compteur qui defile pour les chiffres 
 const counters = document.querySelectorAll('.counter');
@@ -165,44 +134,22 @@ fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
           console.error("Erreur API :", err);
         });
 
+//animation vanta
 
+
+  // bouton retour vers le haut
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = (window.scrollY > 500) ? "block" : "none";
+  });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
 });
 
 
-//animation vanta pour le background
-let vantaEffect;
 
-  window.onload = () => {
-    vantaEffect = VANTA.NET({
-      el: document.body,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xff1b1b,
-      backgroundColor: 0x0,
-      points: 8.00,
-      spacing: 16.00
-    });
-    
-
-    // Correction erreur de dimension
-    setTimeout(() => {
-      if (vantaEffect && vantaEffect.resize) {
-        vantaEffect.resize();
-      }
-    }, 100);
-  };
-
-  window.addEventListener('resize', () => {
-    if (vantaEffect && vantaEffect.resize) {
-      vantaEffect.resize();
-    }
-  });
 
 //fonction qui affiche les details des services
 function toggleDetails(button) {
@@ -249,3 +196,5 @@ const alertBox = document.getElementById('alertBox');
     element.classList.add('active');
   }
  
+
+  

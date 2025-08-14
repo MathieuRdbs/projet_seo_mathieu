@@ -3,10 +3,62 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: black;
-  z-index: -4;
+  background: linear-gradient(135deg, #000000 0%, #000000 20%, #FF0000 60%, #000000 70%, #000000 100%);
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
+
+
+.vanta-bg {
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* derrière tout */
+}
+
+
+/* Animation buzz-out */
+@keyframes buzz-out {
+  10% { transform: translateX(3px) rotate(2deg); }
+  20% { transform: translateX(-3px) rotate(-2deg); }
+  30% { transform: translateX(3px) rotate(2deg); }
+  40% { transform: translateX(-3px) rotate(-2deg); }
+  50% { transform: translateX(2px) rotate(1deg); }
+  60% { transform: translateX(-2px) rotate(-1deg); }
+  70% { transform: translateX(1px) rotate(0deg); }
+  100% { transform: translateX(0) rotate(0); }
+}
+
+#backToTop {
+  position: fixed !important;
+  bottom: 6.8rem;
+  right: 1.2rem;
+  background: transparent;
+  color: black;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 60px;
+  opacity: 1 !important;
+  border:none;
+  display: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+/* Effet buzz au hover */
+#backToTop:hover {
+  animation: buzz-out 0.75s linear;
+  border: none;
+}
+
+#backToTop:focus {
+  outline: none;
+  border: none;
+}
+
+
+
+
 
 /* STYLE NAVBAR */
 nav{
@@ -26,6 +78,7 @@ a.hvr-underline-from-left {
 a.hvr-underline-from-left::before {
   background-color: #e74c3c !important; 
 }
+
 
 
 /* STYLE ACCUEIL */
@@ -71,6 +124,8 @@ a.hvr-underline-from-left::before {
 /* ------------------------------------------------------------------------------ */
     .main_part2{
       counter-reset: step-counter;
+      background-color: #f0f0f0;
+      padding: 10% 0;
     }
 
     .step-box {
@@ -82,8 +137,22 @@ a.hvr-underline-from-left::before {
       transition: all 0.3s ease;
       border: 2px solid transparent;
       padding-bottom: 40px;
-      opacity: 0.8;
-    }
+      opacity: 0.85;
+      display: flex;
+      flex-direction: column; 
+      justify-content: center; /* centrer verticalement */
+      text-align: center;
+      min-height: 200px; /* Hauteur identique */
+      width: 100%; /* S'adapte à la colonne */
+      
+}
+    
+@media (max-width: 990px) {
+  .col-md-2 {
+    flex: 0 0 100%; /* Pleine largeur en mobile */
+    max-width: 100%;
+  }
+}
 
     .step-box:hover {
       border-color: #f0f0f0;
@@ -97,9 +166,9 @@ a.hvr-underline-from-left::before {
       bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
+      color: #f0f0f0;
       font-size: 24px;
       font-weight: bold;
-      color: #f0f0f0;
       background: #1e1e2f;
       width: 32px;
       height: 32px;
@@ -128,8 +197,23 @@ a.hvr-underline-from-left::before {
       }
     }
 
+    @media (max-width: 1120px) {
+  .step-box h5 {
+    font-size: 1.3rem;
+  }
+  .step-box p {
+    font-size: 0.9rem;
+  }
+}
+    
+
+
 
 /* -------------------------------------------------------------------------------- */
+.main_part3{
+  background-color: #f0f0f0;
+}
+
 .carousel-item {
   height: 500px; 
 }
@@ -333,6 +417,7 @@ a.hvr-underline-from-left::before {
 
 
 /* style de l'avis */
+
 .avis-card {
       background: white;
       border-radius: 12px;
@@ -386,12 +471,12 @@ a.hvr-underline-from-left::before {
 
 /* STYLE DE SERVICES */
 .service-card {
-      background: #fff;
+      background: #f0f0f0;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       max-width: 500px;
-      opacity: 1;
+      opacity: 0.85;
      
     }
 
@@ -434,7 +519,7 @@ a.hvr-underline-from-left::before {
 
     /* 2ème partie */
 .container2 {
-    background: #f0f0f0;
+    background: transparent;
     display: flex;
     flex-direction: column;
     gap: 40px; /* espace entre les deux lignes */
