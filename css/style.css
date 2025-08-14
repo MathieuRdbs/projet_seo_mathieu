@@ -425,6 +425,9 @@ a.hvr-underline-from-left::before {
       padding: 1.5rem;
       transition: transform 0.2s;
       height: 100%;
+      flex: 1;        
+      display: flex;
+      flex-direction: column;
     }
 
     .avis-card:hover {
@@ -444,6 +447,8 @@ a.hvr-underline-from-left::before {
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
+      gap: .75rem;
+      overflow: hidden;           
     }
 
     .avis-name {
@@ -456,6 +461,14 @@ a.hvr-underline-from-left::before {
       font-size: 0.85rem;
       color: #777;
     }
+
+    .avis-name, .avis-email {
+      white-space: nowrap;        
+      overflow: hidden;           
+      text-overflow: ellipsis;    
+      max-width: 180px;          
+      display: block;             
+  }
 
     .avis-text {
       font-style: italic;

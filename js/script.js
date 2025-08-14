@@ -102,7 +102,8 @@ fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
 
           data.forEach((comment, index) => {
             const col = document.createElement("div");
-            col.className = "col-md-4 mb-4 d-flex";
+            col.className = "col-12 col-sm-6 col-md-4 mb-4"; 
+
 
             const avatarUrl = `https://i.pravatar.cc/150?img=${Math.floor(Math.random() * 70) + 1}`;
             const fullName = comment.name;
@@ -112,7 +113,7 @@ fetch("https://jsonplaceholder.typicode.com/comments?_limit=6")
             const starsHtml = "★".repeat(rating) + "☆".repeat(5 - rating);
 
             col.innerHTML = `
-              <div class="avis-card">
+              <div class="avis-card h-100">
                 <div class="avis-header">
                   <img src="${avatarUrl}" alt="avatar" class="avatar">
                   <div>
